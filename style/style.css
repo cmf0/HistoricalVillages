@@ -92,6 +92,10 @@
     font-size: 0; /* Oculta o texto (números) */
   }
 
+  .dropdown-item:active{
+    background-color: black;
+  }
+
   .icon {
     width: 30px;
     height: 30px;
