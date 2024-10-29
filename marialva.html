@@ -46,6 +46,23 @@
         background-color: rgba(0, 0, 0, 0.473);
       }
 
+      .carousel {
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel-inner img,
+      .carousel-inner iframe {
+        border-radius: inherit;
+      }
+
+      iframe {
+        border-radius: 20px; /* Adjust the radius as needed */
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
       nav .container-fluid {
         padding-top: 13px;
         height: 50px;
@@ -66,8 +83,17 @@
         font-weight: bold;
       }
 
+      a:hover {
+        color: rgb(90, 90, 90);
+      }
+
       #Titulo {
         font-weight: bold;
+      }
+
+      #home:hover {
+        filter: invert(33%) sepia(0%) saturate(1%) hue-rotate(77deg)
+          brightness(103%) contrast(89%);
       }
 
       .hamburger-icon {
@@ -100,11 +126,12 @@
       </div>
     </header>
 
-    <nav class="dropdown pb-3">
+    <nav class="dropdown pb-3 sticky-top">
       <div class="container-fluid bg-light">
-        <a href="home.html" class="p-0 m-0"
-          ><img src="imagens/castle.svg" alt="" class="icon" /></a
-        ><span id="Titulo" class="p-3">Marialva</span>
+        <a href="home.html" class="p-0 m-0" id="home"
+          ><img src="imagens/castle.svg" alt="" class="icon" />
+          <span id="Titulo" class="p-3">Pagina Inicial</span></a
+        >
 
         <button
           class="border-0 dropdown-toggle"
@@ -181,6 +208,9 @@
 
     <main>
       <div class="container">
+        <div class="container" style="text-align: center">
+          <h1>Marialva</h1>
+        </div>
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
@@ -285,6 +315,39 @@
             <div id="forecastContainer"></div>
           </div>
         </div>
+        <!--SOBRE E ONDE COMER-->
+        <div class="container pt-3">
+          <div class="row">
+            <div class="col" style="text-align: center">
+              <h2>Sobre</h2>
+              <p>
+                Marialva fica a poucos minutos da cidade de Mêda. Esta Aldeia
+                Histórica, num cenário que revela uma das relíquias vivas da
+                ancestralidade portuguesa, transporta o visitante às raízes mais
+                profundas da história do país. As ruas, ladeadas por edifícios
+                resistentes ao tempo, conduzem à cidadela cercada pelas muralhas
+                cujas ruínas é fácil perder a noção do tempo. Povoada pelos
+                aravos, povo lusitano, foi posteriormente conquistada pelos
+                romanos, seguidos dos árabes, até à vitória final de D.
+                Fernando, o Magno, em 1063, na sua emblemática conquita das
+                Beiras.
+              </p>
+            </div>
+            <div class="col" style="text-align: center">
+              <h2>Onde Comer</h2>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4188.542493636932!2d-7.234986536576283!3d40.91215563621338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1srestaurantes%20perto%20de%20Marialva!5e0!3m2!1spt-PT!2spt!4v1729762529593!5m2!1spt-PT!2spt"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <!--SOBRE E ONDE COMER END-->
       </div>
     </main>
 
@@ -414,8 +477,6 @@
         </div>
       </div>
     </div>
-
-    <!--MODAL-->
     <div
       class="modal fade"
       id="Registar"
@@ -483,6 +544,7 @@
         </div>
       </div>
     </div>
+    <!--MODAL-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
