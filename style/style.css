@@ -30,7 +30,7 @@
   }
 
   iframe {
-    border-radius: 20px; /* Adjust the radius as needed */
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -47,6 +47,14 @@
   nav a {
     color: black;
     padding-right: 30px;
+  }
+
+  p{
+      text-align: justify;
+  }
+
+  .bg-light {
+    background-color: rgb(241, 241, 241) !important;
   }
 
   .brasao{
@@ -88,8 +96,7 @@
   }
 
   .carousel-indicators li {
-    /* Ocultar texto dos indicadores */
-    font-size: 0; /* Oculta o texto (números) */
+    font-size: 0;
   }
 
   .dropdown-item:active{
@@ -106,25 +113,30 @@
   }
 
   .line {
-    height: 3px; /* Thickness of the lines */
-    width: 100%; /* Full width of the button */
-    background-color: black; /* Color of the lines */
-    border-radius: 5px; /* Rounded edges */
+    height: 3px; 
+    width: 100%; 
+    background-color: black;
+    border-radius: 5px;
   }
 
   .forecast {
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 15px;
     margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .forecast:hover{
+    background-color: rgb(220, 231, 255);
   }
 
   .hamburger-icon {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px; /* Adjust width as needed */
-    height: 25px; /* Adjust height as needed */
+    width: 30px;
+    height: 25px; 
   }
 
   #home:hover {
