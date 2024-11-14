@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Almeida</title>
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -12,16 +13,13 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link
-    rel="stylesheet"
-    href="style/style.css"
-    />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <header class="bg-dark text-white px-3">
       <div>
         <img id="logo" src="imagens/logo.png" alt="" />
-        <img id="logociteforma" src="imagens/logociteforma.png" alt="">
+        <img id="logociteforma" src="imagens/logociteforma.png" alt="" />
       </div>
     </header>
 
@@ -220,7 +218,7 @@
         <div class="row">
           <div class="col" style="text-align: center">
             <h2>Sobre</h2>
-            <img class="brasao" src="imagens/brasaoalmeida.png" alt="">
+            <img class="brasao" src="imagens/brasaoalmeida.png" alt="" />
             <p>
               Almeida terá tido origem na migração dos habitantes de um castro
               lusitano, localizado a Norte do lugar do Enxido da Sarça, ocupado
@@ -442,97 +440,6 @@
     <!--MODALEND-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      fetch(
-        "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/1090700.json"
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          const forecast = data.data; // Daily forecast data
-          let forecastHTML = "";
-
-          // Array with the names of the months
-          const months = [
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro",
-          ];
-
-          // Mapping of idWeatherType to images
-          const weatherImages = {
-            0: "imagens/sol.png", // No information
-            1: "imagens/sol.png", // Clear sky
-            2: "imagens/nublado.png", // Partly cloudy
-            3: "imagens/sol.png", // Sunny intervals
-            4: "imagens/nublado.png", // Cloudy
-            6: "imagens/aguaceiros.png", // Showers/rain
-            7: "imagens/aguaceiros.png", // Light showers/rain
-            8: "imagens/aguaceiros.png", // Heavy showers/rain
-            9: "imagens/aguaceiros.png", // Rain/showers
-            10: "imagens/chuva.png", // Light rain
-            11: "imagens/aguaceiros.png", // Heavy rain/showers
-            12: "imagens/chuva.png", // Intermittent rain
-            15: "imagens/chuva.png", // Drizzle
-            16: "imagens/nublado.png", // Mist
-            17: "imagens/nublado.png", // Fog
-            18: "imagens/chuva.png", // Snow
-            19: "imagens/aguaceiros.png", // Thunderstorms
-            20: "imagens/aguaceiros.png", // Showers and thunderstorms
-            21: "imagens/nublado.png", // Hail
-            22: "imagens/nublado.png", // Frost
-            23: "imagens/aguaceiros.png", // Rain and thunderstorms
-            24: "imagens/nublado.png", // Convective clouds
-            25: "imagens/nublado.png", // Partly cloudy
-            26: "imagens/nublado.png", // Fog
-            27: "imagens/nublado.png", // Cloudy
-            28: "imagens/nublado.png", // Snow showers
-            29: "imagens/chuva.png", // Rain and snow
-            30: "imagens/chuva.png", // Rain and snow
-          };
-
-          forecast.forEach((day) => {
-            const tMin = day.tMin !== undefined ? day.tMin : "N/A";
-            const tMax = day.tMax !== undefined ? day.tMax : "N/A";
-            const precipitaProb =
-              day.precipitaProb !== undefined ? day.precipitaProb : "N/A";
-
-            // Convert the date to the format dd/month
-            const date = new Date(day.forecastDate);
-            const dayOfMonth = String(date.getDate()).padStart(2, "0"); // Day of the month with two digits
-            const monthName = months[date.getMonth()]; // Get the name of the month
-            const formattedDate = `${dayOfMonth}/${monthName}`;
-
-            // Get the corresponding image for idWeatherType
-            const weatherTypeImage =
-              weatherImages[day.idWeatherType] || "imagens/sol.png"; // Default image if type not found
-
-            forecastHTML += `
-        <div class="forecast">
-          ${formattedDate} <img src="${weatherTypeImage}" alt="Weather type image" style="width: 50px; height: auto;" /> ${tMin}°C a ${tMax}°C
-        </div>
-      `;
-          });
-
-          document.getElementById("forecastContainer").innerHTML = forecastHTML;
-        })
-        .catch((error) => {
-          console.error("Erro:", error);
-          document.getElementById("forecastContainer").innerHTML = `
-      <p>Erro ao carregar a previsão do tempo.</p>
-    `;
-        });
-
-      // Chamar a função ao carregar a página
-      fetchWeatherForecast();
-    </script>
+    <script src="script/script.js"></script>
   </body>
 </html>
