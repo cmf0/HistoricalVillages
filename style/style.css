@@ -50,6 +50,11 @@
     color: white;  
   }
 
+  #dropdownMenuButton:hover{
+    filter: invert(33%) sepia(0%) saturate(1%) hue-rotate(77deg)
+    brightness(103%) contrast(89%);
+  }
+
   nav a {
     color: #212529;
     padding-right: 30px;
